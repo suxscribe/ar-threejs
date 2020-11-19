@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@font-face {
+  font-family: 'Druk Wide Cyr';
+  src: url('/assets/fonts/subset-DrukWideCyr-Medium.woff2') format('woff2'),
+    url('/assets/fonts/subset-DrukWideCyr-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, , minimum-scale=0.5, maximum-scale=1"
+    />
+    <title>AR NFT</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/nft-style.css" />
+    <script src="/js/three.min.js"></script>
+    <!-- <script src="/js/ARnft.js"></script> -->
+    <script src="/js/nftLoader.min.js"></script>
+  </head>
+  <body>
+    <!-- Not working on the mobile -->
+    <script>
+      var nftLoader = new NFTLoader(640, 480, 'config_three.json');
+
+      nftLoader.init('/assets/nft/Felix_03_4', false);
+
+      var texture = new THREE.TextureLoader().load('assets/image.jpg');
+
+      var mat = new THREE.MeshLambertMaterial({
+        color: 0xbbbbff,
+        map: texture,
+      });
+      var planeGeom = new THREE.PlaneGeometry(1, 1, 1, 1);
+      var plane = new THREE.Mesh(planeGeom, mat);
+      plane.position.z = 0;
+      plane.position.x = 90;
+      plane.position.y = 90;
+      plane.scale.set(180, 180, 180);
+
+      nftLoader.add(plane);
+    </script>
+  </body>
+</html>

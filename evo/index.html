@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Тосол Синтез | Календарь 2021</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="/css/nft-style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css?20201119" />
+    <script src="/js/three.min.js"></script>
+    <script src="/js/ARnft.js"></script>
+    <script src="/js/script.js?20201119"></script>
+  </head>
+  <body>
+    <div class="preloader preloader--active">
+      <div class="preloader__top">
+        <div class="preloader__top-bg">
+          <img src="/assets/preloader-top.png" alt="" />
+        </div>
+        <!-- <div class="preloader__top-logo">
+          <img src="/assets/felix-logo.svg" alt="" />
+        </div> -->
+      </div>
+      <div class="preloader__content">
+        <div class="preloader__loading">
+          <div class="preloader__animation">
+            <img src="/assets/spinner.svg" alt="" />
+          </div>
+          <p class="preloader__label">Загружается</p>
+        </div>
+
+        <div class="preloader__loaded">
+          <h3 class="preloader__heading">Все готово!</h3>
+          <p class="preloader__label">
+            Нажмите на кпопку <br />и наведите камеру на календарь
+          </p>
+        </div>
+
+        <div class="preloader__buttons">
+          <div class="preloader__created">
+            <img src="/assets/preloader-created.svg" alt="" />
+          </div>
+          <div class="preloader__play">PLAY</div>
+        </div>
+      </div>
+    </div>
+
+    <video
+      loop
+      webkit-playsinline
+      playsinline
+      crossorigin="anonymous"
+      id="arvideo"
+    >
+      <source src="/assets/evo.mp4" type="video/mp4" />
+    </video>
+
+    <script>
+      let intViewportHeight = window.innerHeight;
+      let intViewportWidth = window.innerWidth;
+      console.log(intViewportHeight);
+      console.log(intViewportWidth);
+
+      ARnft.ARnft.init(
+        640,
+        480,
+        '/assets/nft/evo',
+        '/config.json',
+        false,
+        false
+      )
+        .then((nft) => {
+          nft.addVideo('arvideo', 420, 630, 1); //zrx added scaleY, scaleZ
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

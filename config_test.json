@@ -1,0 +1,32 @@
+{
+  "artoolkitUrl": "js/jsartoolkitNFT/build/artoolkitNFT_wasm.js",
+  "addPath": "",
+  "cameraPara": "data/camera_para.dat",
+  "videoSettings": {
+    "width": {
+      "min": 640,
+      "max": 1280
+    },
+    "height": {
+      "min": 480,
+      "max": 1920
+    },
+    "facingMode": "environment"
+  },
+  "loading": {
+    "logo": {
+      "src": "data/ts-logo.png",
+      "alt": "ts logo"
+    },
+    "loadingMessage": "Загрузка, подождите..."
+  },
+  "renderer": {
+    "type": "three",
+    "alpha": true,
+    "antialias": false,
+    "precision": "lowp"
+  }
+}
+
+
+
